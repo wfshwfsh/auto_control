@@ -2,7 +2,7 @@ TAR = test
 
 CC = gcc
 CFLAGS = -Wall 
-LDFLAGS = -lrt 
+LDFLAGS = -lrt -lxlsxwriter -lz
 
 all: clean build 
 

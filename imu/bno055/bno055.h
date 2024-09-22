@@ -97,6 +97,106 @@ typedef enum
     OPERATION_MODE_NDOF = 0x0C
 } bno055_opmode_t;
 
+
+enum Ascale {  // ACC Full Scale
+	AFS_2G = 0,
+	AFS_4G,
+	AFS_8G,
+	AFS_18G
+};
+enum Abw { // ACC Bandwidth
+	ABW_7_81Hz = 0,
+	ABW_15_63Hz,
+	ABW_31_25Hz,
+	ABW_62_5Hz,
+	ABW_125Hz,    
+	ABW_250Hz,
+	ABW_500Hz,     
+	ABW_1000Hz,    //0x07
+};
+
+enum APwrMode { // ACC Pwr Mode //POWER_MODE_NORMAL???
+	NormalA = 0,  
+	SuspendA,
+	LowPower1A,
+	StandbyA,        
+	LowPower2A,
+	DeepSuspendA
+};
+
+enum Gscale {  // gyro full scale
+	GFS_2000DPS = 0,
+	GFS_1000DPS,
+	GFS_500DPS,
+	GFS_250DPS,
+	GFS_125DPS    // 0x04
+};
+enum GPwrMode { // GYR Pwr Mode
+	NormalG = 0,
+	FastPowerUpG,
+	DeepSuspendedG,
+	SuspendG,
+	AdvancedPowerSaveG
+};
+enum Gbw { // gyro bandwidth
+	GBW_523Hz = 0,
+	GBW_230Hz,
+	GBW_116Hz,
+	GBW_47Hz,
+	GBW_23Hz,
+	GBW_12Hz,
+	GBW_64Hz,
+	GBW_32Hz
+};
+
+//??
+enum OPRMode {  // BNO-55 operation modes
+	CONFIGMODE = 0x00,
+	// Sensor Mode
+	ACCONLY,
+	MAGONLY,
+	GYROONLY,
+	ACCMAG,
+	ACCGYRO,
+	MAGGYRO,
+	AMG,            // 0x07
+	// Fusion Mode
+	IMU,
+	COMPASS,
+	M4G,
+	NDOF_FMC_OFF,
+	NDOF            // 0x0C OPERATION_MODE_NDOF
+};
+
+enum PWRMode {
+	Normalpwr = 0,   
+	Lowpower,       
+	Suspendpwr       
+};
+enum Modr {         // magnetometer output data rate  
+	MODR_2Hz = 0,     
+	MODR_6Hz,
+	MODR_8Hz,
+	MODR_10Hz,  
+	MODR_15Hz,
+	MODR_20Hz,
+	MODR_25Hz, 
+	MODR_30Hz 
+};
+enum MOpMode { // MAG Op Mode
+	LowPower = 0,
+	Regular,
+	EnhancedRegular,
+	HighAccuracy
+};
+enum MPwrMode { // MAG power mode
+	Normal = 0,   
+	Sleep,     
+	Suspend,
+	ForceMode  
+};
+
+
 /* BNO055 power settings */
 typedef enum
 {
@@ -134,10 +234,7 @@ typedef enum
 /* BNO055 Registers */
 typedef enum
 {
-    /* Page id register definition */
-    BNO055_PAGE_ID_ADDR = 0x07,
-
-    /* PAGE0 REGISTER DEFINITION START*/
+	/* PAGE0 REGISTER DEFINITION START*/
     BNO055_CHIP_ID_ADDR = 0x00,
     BNO055_ACCEL_REV_ID_ADDR = 0x01,
     BNO055_MAG_REV_ID_ADDR = 0x02,
@@ -145,6 +242,10 @@ typedef enum
     BNO055_SW_REV_ID_LSB_ADDR = 0x04,
     BNO055_SW_REV_ID_MSB_ADDR = 0x05,
     BNO055_BL_REV_ID_ADDR = 0X06,
+	
+	
+    /* Page id register definition */
+    BNO055_PAGE_ID_ADDR = 0x07,
 
     /* Accel data register */
     BNO055_ACCEL_DATA_X_LSB_ADDR = 0x08,
@@ -279,8 +380,37 @@ typedef enum
     ACCEL_RADIUS_MSB_ADDR = 0x68,
     MAG_RADIUS_LSB_ADDR = 0x69,
     MAG_RADIUS_MSB_ADDR = 0x6A
-} bno055_register_t;
+} bno055_page0_register_t;
 
+typedef enum
+{
+    /* PAGE1 REGISTER DEFINITION START*/
+	BNO055_PAGE_ID          = 0x07,
+	BNO055_ACC_CONFIG       = 0x08,
+	BNO055_MAG_CONFIG       = 0x09,
+	BNO055_GYRO_CONFIG_0    = 0x0A,
+	BNO055_GYRO_CONFIG_1    = 0x0B,
+	BNO055_ACC_SLEEP_CONFIG = 0x0C,
+	BNO055_GYR_SLEEP_CONFIG = 0x0D,
+	BNO055_INT_MSK          = 0x0F,
+	BNO055_INT_EN           = 0x10,
+	BNO055_ACC_AM_THRES     = 0x11,
+	BNO055_ACC_INT_SETTINGS = 0x12,
+	BNO055_ACC_HG_DURATION  = 0x13,
+	BNO055_ACC_HG_THRESH    = 0x14,
+	BNO055_ACC_NM_THRESH    = 0x15,
+	BNO055_ACC_NM_SET       = 0x16,
+	BNO055_GYR_INT_SETTINGS = 0x17,
+	BNO055_GYR_HR_X_SET     = 0x18,
+	BNO055_GYR_DUR_X        = 0x19,
+	BNO055_GYR_HR_Y_SET     = 0x1A,
+	BNO055_GYR_DUR_Y        = 0x1B,
+	BNO055_GYR_HR_Z_SET     = 0x1C,
+	BNO055_GYR_DUR_Z        = 0x1D,
+	BNO055_GYR_AM_THRESH    = 0x1E,
+	BNO055_GYR_AM_SET       = 0x1F,
+	
+} bno055_page1_register_t;
 #endif
 
 

@@ -1,0 +1,1000 @@
+ 1108  cd arch/
+ 1109  arm64/include/
+ 1110  ls mkdir asm
+ 1111  mkdir asm
+ 1112  ls asm/
+ 1113  rm -r asm/
+ 1114  cd arm64/include/asm/
+ 1115  ls
+ 1116  cp ../../../../arch/powerpc/include/asm/8xx_immap.h ./
+ 1117  cd ../../../
+ 1118  cd ..
+ 1119  make -j8
+ 1120  cd -
+ 1121  cd arm64/include/asm/
+ 1122  ls
+ 1123  cd ../../../../
+ 1124  find -name mpc8xx.h
+ 1125  cd arm64/include/asm/
+ 1126  cd arch/arm64/include/asm/
+ 1127  cp ../../../powerpc/platforms/8xx/mpc8xx.h ./
+ 1128  cd ../../../../
+ 1129  make -j8
+ 1130  find -name commproc.h
+ 1131  cd ../../
+ 1132  ls
+ 1133  cd ..
+ 1134  ls
+ 1135  cd sdk/
+ 1136  ls
+ 1137  cd 3rd_party/src/
+ 1138  ls
+ 1139  tar kxvf xenomai-3.1.tar.bz2 
+ 1140  find -name commproc.h
+ 1141  cd ../../
+ 1142  cd sources/linux-imx/
+ 1143  find -name commproc.h
+ 1144  cd ../../../
+ 1145  lx
+ 1146  cd ..
+ 1147  ls
+ 1148  rm -r mipc100/
+ 1149  sudo rm -r mipc100/
+ 1150  df
+ 1151  cd 
+ 1152  cd work/
+ 1153  ls
+ 1154  cd xenomai/
+ 1155  ls
+ 1156  rm -r linux-dovetail/
+ 1157  df
+ 1158  sudo rm -r linux-dovetail/
+ 1159  ls
+ 1160  df
+ 1161  df -h
+ 1162  ls
+ 1163  ifconfig 
+ 1164  ping 192.168.10.66
+ 1165  ping 192.168.10.68
+ 1166  ping 192.168.10.2
+ 1167  ping 192.168.10.68
+ 1168  cd 
+ 1169  cd git/adv_epc-r3720/
+ 1170  cd linux-imx/drivers/xenomai/net/
+ 1171  grep -nR "hard_start_xmit"
+ 1172  cd drivers/
+ 1173  grep -nR "hard_start_xmit"
+ 1174  cd freescale/
+ 1175  grep -nR "hard_start_xmit"
+ 1176  vim fec_main.c :3198
+ 1177  vim fec_main.c:3198
+ 1178  vim fec_main.c +3198
+ 1179  cd ..
+ 1180  cd stack/
+ 1181  ls
+ 1182  grep -nR EAGAIN
+ 1183  grep -nR hard_start_xmit
+ 1184  vim rtdev.c +857
+ 1185  grep -nR rtnetif_carrier_ok
+ 1186  vim include/rtnet_port.h 
+ 1187  vim rtdev.c +857
+ 1188  vim include/rtnet_port.h 
+ 1189  vim rtdev.c +857
+ 1190  cd ..
+ 1191  grep -nR rt_register_rtnetdev
+ 1192  cd drivers/freescale/
+ 1193  vim fec_main.c 
+ 1194  grep -nR  "carrier lost"
+ 1195  vim fec_main.c 
+ 1196  cd ..
+ 1197  cd drivers/
+ 1198  ls
+ 1199  cd ..
+ 1200  ls
+ 1201  cd ..l
+ 1202  vim ../.config
+ 1203  cd net/phy/
+ 1204  ls
+ 1205  vim include/rtnet_port.h 
+ 1206  cd -
+ 1207  vim include/rtnet_port.h 
+ 1208  cd net/
+ 1209  vim include/rtnet_port.h 
+ 1210  cd ..
+ 1211  cd xenomai/net/drivers/
+ 1212  vim include/rtnet_port.h 
+ 1213  ls
+ 1214  cd ..
+ 1215  ls
+ 1216  cd stack/
+ 1217  ls
+ 1218  vim include/rtnet_port.h 
+ 1219  cd ..
+ 1220  grep -nR __RTNET_LINK_STATE_NOCARRIER
+ 1221  vim include/rtnet_port.h 
+ 1222  cd drivers/
+ 1223  vim include/rtnet_port.h 
+ 1224  ls
+ 1225  cd freescale/
+ 1226  ls
+ 1227  vim include/rtnet_port.h 
+ 1228  cd ..
+ 1229  ls
+ 1230  cd stack/
+ 1231  vim include/rtnet_port.h 
+ 1232  cd ..
+ 1233  grep -nR rtnetif_carrier_on
+ 1234  vim drivers/r8169.c 
+ 1235  vim drivers/freescale/fec_main.c 
+ 1236  vim drivers/r8169.c 
+ 1237  vim drivers/freescale/fec_main.c 
+ 1238  grep -nR NETDEV_TX_BUSY
+ 1239  cd ../../../
+ 1240  grep -nR NETDEV_TX_BUSY |grep *.h
+ 1241  grep -nR NETDEV_TX_BUSY |grep .h
+ 1242  vim include/linux/netdevice.h
+ 1243  cd include/
+ 1244  ls
+ 1245  cd xenomai/
+ 1246  grep -nR NETDEV_TX_BUSY
+ 1247  cd ..
+ 1248  grep -nR NETDEV_TX_BUSY
+ 1249  cd ..
+ 1250  vim include/linux/netdevice.h
+ 1251  make -j8
+ 1252  cd drivers/xenomai/net/drivers/freescale/
+ 1253  ls
+ 1254  cp rtnet_fec.ko /nfsshare/
+ 1255  cd ../../../
+ 1256  cd ..
+ 1257  rm -rf dist/
+ 1258  make INSTALL_MOD_PATH=dist modules_install
+ 1259  cd dist/
+ 1260  ls
+ 1261  tar jcvf lib_0324.tar.bz2 ./*
+ 1262  cp lib_0324.tar.bz2 /nfsshare/
+ 1263  cd ..
+ 1264  make menuconfig
+ 1265  make -j8
+ 1266  cp drivers/xenomai/net/stack/rtnet.ko /nfsshare/
+ 1267  make -j8
+ 1268  cp drivers/xenomai/net/stack/rtnet.ko /nfsshare/
+ 1269  cp drivers/xenomai/net/drivers/freescale/rtnet_fec.ko /nfsshare/
+ 1270  cd drivers/xenomai/net/
+ 1271  grep -nR "hard_start_xmit returned"
+ 1272  cd ../../../
+ 1273  make -j8
+ 1274  cp drivers/xenomai/net/stack/rtnet.ko /nfsshare/
+ 1275  cd drivers/xenomai/net/
+ 1276  grep -nR rtdev_xmit
+ 1277  cd stack/rtcfg/
+ 1278  ls
+ 1279  grep -nR rtdev_xmit
+ 1280  vim rtcfg_frame.c 
+ 1281  ping 192.168.10.68
+ 1282  cd git/adv_epc-r3720/linux-imx/drivers/xenomai/net/
+ 1283  grep -nR rtdev_add_event_hook
+ 1284  vi stack/rtcfg/rtcfg_proc.c +321
+ 1285  vim stack/rtcfg/rtcfg_proc.c 
+ 1286  grep -nR rtcfg_init_proc
+ 1287  vim stack/rtcfg/rtcfg_module.c +53
+ 1288  vim stack/rtcfg/rtcfg_proc.c 
+ 1289  grep -nR         err = xnvfile_init_dir("rtcfg", &rtcfg_proc_root, &rtnet_proc_root);
+ 1290  grep -nR "RTmac: init realtime media access control"
+ 1291  vim stack/rtcfg/rtcfg_module.c +37
+ 1292  grep -nR rtcfg_init
+ 1293  cd git/adv_epc-r3720/
+ 1294  ls
+ 1295  cd linux-imx/
+ 1296  ls
+ 1297  cd drivers/xenomai/net/
+ 1298  ls
+ 1299  cd drivers/
+ 1300  ls
+ 1301  cd ..
+ 1302  grep -nR "xxx hard_start_xmit"
+ 1303  mkdir /nfsshare/rt
+ 1304  cd ../../
+ 1305  cd ..
+ 1306  ls
+ 1307  cp drivers/xenomai/net/stack/rtmac/nomac/nomac.ko /nfsshare/rt
+ 1308  cp drivers/xenomai/net/stack/rtmac/tdma/tdma.ko /nfsshare/rt
+ 1309  cp drivers/xenomai/net/stack/rtmac/rtmac.ko /nfsshare/rt
+ 1310  cp drivers/xenomai/net/stack/rtnet.ko /nfsshare/rt
+ 1311  cd git/adv_epc-r3720/
+ 1312  ls
+ 1313  cd linux-imx/
+ 1314  ls
+ 1315  source ~/env/source_imx8_xeno.sh 
+ 1316  make menuconfig
+ 1317  make -j8
+ 1318  make modules -j8
+ 1319  make ARCH=arm64 INSTALL_MOD_PATH=dist modules_install
+ 1320  cd dist/
+ 1321  ls
+ 1322  cd ..
+ 1323  rm -r dist/
+ 1324  make ARCH=arm64 INSTALL_MOD_PATH=dist modules_install
+ 1325  cd dist/
+ 1326  ls
+ 1327  tar jcvf lib_0327.tar.bz2 ./*
+ 1328  ls
+ 1329  cp lib_0327.tar.bz2 /nfsshare/
+ 1330  rm /nfsshare/lib_0324.tar.bz2 
+ 1331  ping 192.168.10.68
+ 1332  cp /nfsshare/trace ~/work/
+ 1333  cd ..
+ 1334  make -j8
+ 1335  ping 192.168.10.68
+ 1336  make -j8
+ 1337  cp drivers/xenomai/net/stack/rtmac/tdma/tdma.ko /nfsshare/rt/
+ 1338  ping 192.168.10.68
+ 1339  fdisk /dev/sda
+ 1340  sudo fdisk /dev/sda
+ 1341  cd git/
+ 1342  ls
+ 1343  cd adv
+ 1344  ls
+ 1345  cd ..
+ 1346  ls
+ 1347  cd 
+ 1348  cd work/
+ 1349  ls
+ 1350  cd 
+ 1351  cd git/adv_epc-r3720/
+ 1352  ls
+ 1353  git branch 
+ 1354  ls
+ 1355  cd linux-imx/
+ 1356  cd git/
+ 1357  ls
+ 1358  cd adv_epc-r3720/
+ 1359  ls
+ 1360  cd linux-imx/
+ 1361  git clean -xdf
+ 1362  make clean 
+ 1363  git branch 
+ 1364  cd git/
+ 1365  ls
+ 1366  git clone git@github.com:wfshwfsh/mipc100.git
+ 1367  cd mipc100/
+ 1368  ls
+ 1369  cd scripts/
+ 1370  ls
+ 1371  vim mipc_release.sh 
+ 1372  ./mipc_release.sh OHT
+ 1373  ls
+ 1374  ./mipc_release.sh OHT
+ 1375  cd ..
+ 1376  ls
+ 1377  rm -r 20240831/
+ 1378  ls
+ 1379  git status 
+ 1380  git branch 
+ 1381  git checkout r2_xenomai 
+ 1382  ls
+ 1383  git status 
+ 1384  ls
+ 1385  cd sdk/
+ 1386  ls
+ 1387  cd ..
+ 1388  cd scripts/
+ 1389  ./mipc_release.sh OHT
+ 1390  vim mipc_release.sh 
+ 1391  cd ..
+ 1392  vim scripts/mipc_release.sh 
+ 1393  ls sdk/kernel_cfg/kernel_config_mipcV2_stoker_20211103
+ 1394  vim scripts/mipc_release.sh 
+ 1395  ls sdk/kernel_cfg/kconfig_v2_xenomai 
+ 1396  cd scripts/
+ 1397  vim mipc_release.sh 
+ 1398  ./mipc_release.sh OHT
+ 1399  cd ..
+ 1400  ls
+ 1401  cd 20240831/
+ 1402  ls
+ 1403  cd ..
+ 1404  ls
+ 1405  cd sdk/ecat/
+ 1406  ls
+ 1407  cd ethercat/
+ 1408  ls
+ 1409  cd dist/
+ 1410  ls
+ 1411  cd ..
+ 1412  ls
+ 1413  cd ..
+ 1414  l
+ 1415  ls
+ 1416  cd ..
+ 1417  ls
+ 1418  cd ..
+ 1419  ls
+ 1420  cd 20240831/
+ 1421  ls
+ 1422  cd -
+ 1423  ls
+ 1424  cd sdk/
+ 1425  ls
+ 1426  cd 3rd_party/
+ 1427  lsl
+ 1428  ls
+ 1429  cd //
+ 1430  ;s
+ 1431  cd -
+ 1432  cd src/
+ 1433  ls
+ 1434  cd ..
+ 1435  ls
+ 1436  cd ..
+ 1437  ls
+ 1438  cd ecat/
+ 1439  ls
+ 1440  cd ethercat/dist/lib/modules/4.14.98/
+ 1441  ;s
+ 1442  ls
+ 1443  cd kernel/
+ 1444  ls
+ 1445  cd drivers/
+ 1446  ls
+ 1447  cd ../../../../
+ 1448  ls
+ 1449  cd ../
+ 1450  ls
+ 1451  cd ..
+ 1452  ls
+ 1453  cd ../
+ 1454  ls
+ 1455  cd igh_ethercat/
+ 1456  ls
+ 1457  cd devices/
+ 1458  cp -r ../../_igh_ethercat/devices/fec/ ./
+ 1459  cd ../../
+ 1460  cd _igh_ethercat/
+ 1461  vim Makefile
+ 1462  cd devices/
+ 1463  ls
+ 1464  vim Makefile
+ 1465  grep -nR fec
+ 1466  ls
+ 1467  vim Kbuild
+ 1468  vim Kbuild.in 
+ 1469  ls
+ 1470  vim Makefile
+ 1471  grep -nR --enable-fec
+ 1472  grep -nR "--enable-fec"
+ 1473  grep -nR "enable-fec"
+ 1474  cd ..
+ 1475  grep -nR "enable-fec"
+ 1476  vim configure
+ 1477  grep -nr "enable-fec"
+ 1478  vim configure.ac
+ 1479  grep -nR "fec"
+ 1480  make clean
+ 1481  ls
+ 1482  make clean
+ 1483  automake-1.15 
+ 1484  ./bootstrap 
+ 1485  grep -nR ENABLE_FEC
+ 1486  cd devices/
+ 1487  grep -nR ENABLE_FEC
+ 1488  cd ..
+ 1489  grep -nR enable-fec
+ 1490  vim Kbuild
+ 1491  vim Kbuild.in 
+ 1492  vim Makefile
+ 1493  cd script/
+ 1494  ls
+ 1495  grep -nR FEC
+ 1496  ls
+ 1497  cd ../../igh_ethercat/devices/
+ 1498  vim Makefile
+ 1499  cd ..
+ 1500  vim config
+ 1501  vim configure
+ 1502  ./bootstrap 
+ 1503  vim configure
+ 1504  ./bootstrap 
+ 1505  vim configure.ac 
+ 1506  ./bootstrap 
+ 1507  vim configure
+ 1508  vim devices/fec/Kbuild
+ 1509  vim devices/fec/Makefile
+ 1510  cd devices/fec/
+ 1511  make
+ 1512  cd ../../
+ 1513  make clean
+ 1514  rm -r dist/
+ 1515  ls
+ 1516  make clean -j$(nproc)
+ 1517  grep -nR Leaving
+ 1518  grep -nR "Leaving dir"
+ 1519  grep -nR "Leaving direct"
+ 1520  make clean -j$(nproc)
+ 1521  grep -nR "Entering directory"
+ 1522  rm -rf dist/
+ 1523  ls
+ 1524  grep -nR "Entering directory"
+ 1525  grep -nr "Entering directory"
+ 1526  ./bootstrap 
+ 1527  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/sdk/sources/linux-imx/ --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-fec=yes --enable-rtdm=no --enable-wildcards=yes --disable-eoe
+ 1528  make -j$(nproc)
+ 1529  make clean
+ 1530  source /opt/fsl-imx-wayland/4.14-sumo/environment-setup-aarch64-poky-linux
+ 1531  ./bootstrap 
+ 1532  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/sdk/sources/linux-imx/ --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-fec=yes --enable-rtdm=no --enable-wildcards=yes --disable-eoe
+ 1533  make -j$(nproc)
+ 1534  vim Makefile
+ 1535  cd script/
+ 1536  grep -nR FEC
+ 1537  cd ..
+ 1538  vim 8139
+ 1539  grep -nR 8139
+ 1540  grep -nR enable8139too
+ 1541  ls
+ 1542  history |grep configure
+ 1543  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/sdk/sources/linux-imx/ --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-fec=yes --enable-rtdm=no --enable-wildcards=yes --disable-eoe
+ 1544  make -j$(nproc)
+ 1545  vim devices/fec/Kbuild
+ 1546  make -j$(nproc)
+ 1547  ls devices/fec/
+ 1548  cd devices/fec/
+ 1549  make
+ 1550  vim Makefile
+ 1551  cd ..
+ 1552  vim Makefile
+ 1553  vim Kbuild
+ 1554  vim Kbuild.in 
+ 1555  vim Makefile
+ 1556  vim Makefile.am 
+ 1557  vim Makefile.in 
+ 1558  vim fec/Kbuild
+ 1559  vim Makefile
+ 1560  vim Makefile +350
+ 1561  vim fec/Kbuild
+ 1562  cd ..
+ 1563  vim master/rtdm.c 
+ 1564  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/sdk/sources/linux-imx/ --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-fec=yes --enable-rtdm=yes --enable-wildcards=yes --disable-eoe --with-xenomai-dir=/home/will/git/mipc100/sdk/3rd_party/src/xenomai-3.1/
+ 1565  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/sdk/sources/linux-imx/ --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-fec=yes --enable-rtdm=yes --enable-wildcards=yes --disable-eoe --with-xenomai-dir=/usr/xenomai/
+ 1566  make -j8
+ 1567  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/sdk/sources/linux-imx/ --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-fec=yes --enable-rtdm=no --enable-wildcards=yes --disable-eoe
+ 1568  make -j8
+ 1569  make clean -j8
+ 1570  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/sdk/sources/linux-imx/ --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-fec=yes --enable-rtdm=yes --enable-wildcards=yes --disable-eoe --with-xenomai-dir=/usr/xenomai/
+ 1571  make -j8
+ 1572  make -j8 clean
+ 1573  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/sdk/sources/linux-imx/ --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-fec=yes --enable-rtdm=no --enable-wildcards=yes --disable-eoe
+ 1574  make -j8
+ 1575  vim master/rtdm.c 
+ 1576  make -j8
+ 1577  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/sdk/sources/linux-imx/ --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-fec=yes --enable-rtdm=no --enable-wildcards=yes --disable-eoe
+ 1578  ls
+ 1579  cd ls
+ 1580  ls
+ 1581  cd master/
+ 1582  ls
+ 1583  cd ..
+ 1584  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/sdk/sources/linux-imx/ --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-fec=yes --enable-rtdm=no --enable-wildcards=yes --disable-eoe
+ 1585  make
+ 1586  poweroff 
+ 1587  vim mipc_release.sh 
+ 1588  cd ../sdk/ecat/igh_ethercat/
+ 1589  ./bootstrap 
+ 1590  cd ../../
+ 1591  ls
+ 1592  cd 3rd_party/src/
+ 1593  ls
+ 1594  unzip etherlab1.5-stable.zip 
+ 1595  ls
+ 1596  cd etherlabmaster-code-334c34cfd2e560b297598888e761ddc8ff7a31f8/
+ 1597  ls
+ 1598  vim Makefile.am 
+ 1599  cp -r script/* ~/git/mipc100/sdk/ecat/igh_ethercat/
+ 1600  find -name Makefile.in
+ 1601  ls
+ 1602  find -name Makefile.in
+ 1603  cd ..
+ 1604  ls
+ 1605  mv etherlabmaster-code-334c34cfd2e560b297598888e761ddc8ff7a31f8/ etherlabmaster
+ 1606  cd etherlabmaster/
+ 1607  find -name Makefile.in
+ 1608  ls
+ 1609  cd ..
+ 1610  ls
+ 1611  cd ../../ecat/igh_ethercat/
+ 1612  find -name Makefile.in
+ 1613  cd ../../../
+ 1614  cd sdk/ecat/
+ 1615  ls
+ 1616  mv igh_ethercat/ _igh_ethercat/
+ 1617  cd igh_ethercat/
+ 1618  cd ..
+ 1619  cd ../../
+ 1620  ls
+ 1621  cd app/
+ 1622  ls
+ 1623  cd test/
+ 1624  ls
+ 1625  cd ethercat/
+ 1626  ls
+ 1627  cd io_test/
+ 1628  vim io_test_rt_lan9252/io_test_rt_lan9252.c 
+ 1629  cd -
+ 1630  ifconfig 
+ 1631  cd ../../../
+ 1632  ls
+ 1633  vim scripts/mipc_release.sh 
+ 1634  cd scripts/
+ 1635  ./mipc_release.sh OHT
+ 1636  source /opt/fsl-imx-wayland/4.14-sumo/environment-setup-aarch64-poky-linux
+ 1637  ;s
+ 1638  vim mipc_release.sh 
+ 1639  cd ../
+ 1640  ls
+ 1641  cd sdk/ecat/igh_ethercat/
+ 1642  ls
+ 1643  ./bootstrap 
+ 1644  make clean
+ 1645  ./bootstrap 
+ 1646  git status 
+ 1647  find -name Makefile.in
+ 1648  cd //
+ 1649  cd -
+ 1650  cd ..
+ 1651  cd ../3rd_party/src/etherlabmaster/
+ 1652  ls
+ 1653  ./bootstrap 
+ 1654  find -name Makefile.in
+ 1655  ls
+ 1656  cd ..
+ 1657  cp -r etherlabmaster/ ../../ecat/igh_ethercat/
+ 1658  cd ../../
+ 1659  ls
+ 1660  cd ..
+ 1661  cd scripts/
+ 1662  ./mipc_release.sh OHT
+ 1663  vim mipc_release.sh 
+ 1664  ./mipc_release.sh OHT
+ 1665  ls
+ 1666  vim mipc_release.sh 
+ 1667  ./mipc_release.sh OHT
+ 1668  cd ../sdk/ecat/igh_ethercat/
+ 1669  ./configure 
+ 1670  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/scripts/../sdk/sources/linux-imx --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-fec=yes --enable-rtdm=yes --enable-wildcards=yes --disable-eoe
+ 1671  cd -
+ 1672  vim mipc_release.sh 
+ 1673  ./mipc_release.sh OHT
+ 1674  vim mipc_release.sh 
+ 1675  ./mipc_release.sh OHT
+ 1676  vim mipc_release.sh 
+ 1677  ./mipc_release.sh OHT
+ 1678  ls /usr/xenomai -l 
+ 1679  file /usr/xenomai/demo/gpiopwm 
+ 1680  :q
+ 1681  vim mipc_release.sh 
+ 1682  ./mipc_release.sh OHT
+ 1683  vim mipc_release.sh 
+ 1684  ./mipc_release.sh OHT
+ 1685  cd ..
+ 1686  ls
+ 1687  cd scripts/
+ 1688  vim mipc_release.sh 
+ 1689  l
+ 1690  vim mipc_release.sh 
+ 1691  ./mipc_release.sh OHT
+ 1692  vim mipc_release.sh 
+ 1693  ./mipc_release.sh OHT
+ 1694  vim mipc_release.sh 
+ 1695  ./mipc_release.sh OHT
+ 1696  vim mipc_release.sh 
+ 1697  cd ../sdk/ecat/_igh_ethercat/
+ 1698  ls
+ 1699  ./bootstrap 
+ 1700  cd ..
+ 1701  cd igh_ethercat/
+ 1702  ls
+ 1703  make
+ 1704  cd devices/fec/
+ 1705  ls
+ 1706  cd ..
+ 1707  grep -nR ENABLE_FEC
+ 1708  grep -nR ENABLE_IGH
+ 1709  grep -nR ENABLE_IGB
+ 1710  cd ..
+ 1711  grep -nR ENABLE_FEC
+ 1712  grep -nR enable-fec
+ 1713  vim config +1518
+ 1714  vim configure +1518
+ 1715  cd ../../
+ 1716  cd ..
+ 1717  vim scripts/mipc_release.sh 
+ 1718  cd scripts/
+ 1719  ./mipc_release.sh OHT
+ 1720  vim scripts/mipc_release.sh 
+ 1721  vim mipc_release.sh 
+ 1722  cd scripts/
+ 1723  ./mipc_release.sh OHT
+ 1724  ls ../sdk/ecat/igh_ethercat/dist/lib/modules/4.14.98/kernel/drivers/ethercat/devices/ec_generic.ko 
+ 1725  ls ../sdk/ecat/igh_ethercat/dist/lib/modules/4.14.98/kernel/drivers/ethercat/devices/
+ 1726  vim mipc_release.sh 
+ 1727  ./mipc_release.sh OOHT
+ 1728  ./mipc_release.sh OHT
+ 1729  vim mipc_release.sh 
+ 1730  ./mipc_release.sh OHT
+ 1731  vim mipc_release.sh 
+ 1732  ./mipc_release.sh OHT
+ 1733  vim configure
+ 1734  make -j$(nproc)
+ 1735  ./bootstrap 
+ 1736  history |grep configure
+ 1737  cd ../
+ 1738  cd ,,
+ 1739  cd ..
+ 1740  ls
+ 1741  cd ecat/igh_ethercat/
+ 1742  ls
+ 1743  cd dist/
+ 1744  ls
+ 1745  cd lib/modules/4.14.98/kernel/drivers/ethercat/
+ 1746  ls
+ 1747  cd devices/fec/
+ 1748  ls
+ 1749  cd -
+ 1750  cd ../../../../../
+ 1751  cd ../../
+ 1752  ls /usr/xenomai/include/rtdm/rtdm.h 
+ 1753  vim master/rtdm.c 
+ 1754  cd /usr/xenomai/include/
+ 1755  grep -nR rtdm_dev_register
+ 1756  l
+ 1757  grep -nr rtdm_dev_register
+ 1758  grep -nR rtdm_dev_register
+ 1759  cd -
+ 1760  cd /usr/xenomai/
+ 1761  grep -nR rtdm_dev_register
+ 1762  cd -
+ 1763  ls
+ 1764  cd -
+ 1765  cd ../../
+ 1766  ls
+ 1767  cd ..
+ 1768  ls
+ 1769  cd ..
+ 1770  ls
+ 1771  cd adv
+ 1772  ls
+ 1773  cd ..
+ 1774  ls
+ 1775  cd 
+ 1776  cd work/
+ 1777  ls
+ 1778  cd xenomai/
+ 1779  grep -nR rtdm_dev_register
+ 1780  vim xenomai-3.1/kernel/drivers/gpiopwm/gpiopwm.c
+ 1781  cd -
+ 1782  cd 
+ 1783  cd git/mipc100/sdk/sources/linux-imx/
+ 1784  ls
+ 1785  cd include/xenomai/rtdm/
+ 1786  find -name rtdm_driver.h
+ 1787  cd ../../
+ 1788  find -name rtdm_driver.h
+ 1789  cd ..
+ 1790  find -name rtdm_driver.h
+ 1791  ls
+ 1792  cd ..
+ 1793  ls
+ 1794  cd ..
+ 1795  ls
+ 1796  cd 3rd_party/src/
+ 1797  ls
+ 1798  tar jxvf xenomai-3.1.tar.bz2 
+ 1799  ls
+ 1800  cd xenomai-3.1/
+ 1801  find -name rtdm_driver.h
+ 1802  find -name rtdm_driver.c
+ 1803  grep -nR rtdm_driver
+ 1804  grep -nR rtdm_driver.h
+ 1805  ls /usr/xenomai/include/rtdm/
+ 1806  find -name driver.h
+ 1807  ls /usr/xenomai/include/
+ 1808  find -name driver.h
+ 1809  cd /usr/xenomai/include/
+ 1810  find -name driver.h
+ 1811  cd -
+ 1812  find -name driver.h
+ 1813  cd -
+ 1814  cd /usr/xenomai/
+ 1815  find -name driver.h
+ 1816  cd -
+ 1817  find -name driver.h
+ 1818  cd -
+ 1819  ls
+ 1820  tree
+ 1821  cd -
+ 1822  cd /usr/xenomai/include/
+ 1823  find -name driver.h
+ 1824  cd -
+ 1825  cd ..
+ 1826  cd ccat/
+ 1827  vim Makefile.am 
+ 1828  vim Kbuild.in 
+ 1829  cd ../fec/
+ 1830  ls
+ 1831  vim ../ccat/Kbuild.in 
+ 1832  cd ../../../
+ 1833  cd ../../
+ 1834  cd scripts/
+ 1835  vim mipc_release.sh p
+ 1836  exit
+ 1837  cd ../
+ 1838  cd ccat/
+ 1839  vim Makefile.am 
+ 1840  vim Kbuild.in 
+ 1841  cd ../../
+ 1842  grep -nR CFLAGS_fec_main-ethercat
+ 1843  exit
+ 1844  ls
+ 1845  exit
+ 1846  cd git/mipc100/
+ 1847  ls
+ 1848  git status 
+ 1849  ifconfig 
+ 1850  git log
+ 1851  git reset --hard 6e19226c391b67e134371dc49fe0bf62e40e804b
+ 1852  ping 8.8.8.8
+ 1853  git reset --hard 6e19226c391b67e134371dc49fe0bf62e40e804b
+ 1854  git branch 
+ 1855  git clean -xdf
+ 1856  git reset --hard 6e19226c391b67e134371dc49fe0bf62e40e804b
+ 1857  git pull origin r2_xenomai 
+ 1858  cd scripts/
+ 1859  vim mipc_release.sh 
+ 1860  git branch 
+ 1861  git log
+ 1862  vim mipc_release.sh 
+ 1863  ./mipc_release.sh OHT
+ 1864  vim mipc_release.sh 
+ 1865  ./mipc_release.sh OHT
+ 1866  cd ../sdk/ecat/etherlab_v1.6/
+ 1867  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/scripts/../sdk/sources/linux-imx --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-wildcards=yes --disable-eoe --enable-fec=yes --enable-rtdm --with-xenomai-dir=/usr/xenomai
+ 1868  cd -
+ 1869  vim mipc_release.sh 
+ 1870  ./mipc_release.sh OHT
+ 1871  ls ../sdk/ecat/etherlab_v1.6/devices/
+ 1872  git branch 
+ 1873  cd ../sdk/ecat/etherlab_v1.6/devices/
+ 1874  cp -r ../../igh_ethercat/devices/fec/ ./
+ 1875  cd fec/
+ 1876  ls
+ 1877  vim Makefile.in 
+ 1878  rm Makefile.in 
+ 1879  cd ..
+ 1880  vim configure.ac 
+ 1881  ls
+ 1882  cd 
+ 1883  cd git/
+ 1884  ls
+ 1885  cd 
+ 1886  cd -
+ 1887  cd git/mipc100/sdk/ecat/etherlab_v1.6/
+ 1888  vim configure.ac 
+ 1889  vim devices/Kbuild.in 
+ 1890  vim devices/Makefile.am 
+ 1891  cd devices/
+ 1892  mkdir fec
+ 1893  cd fec/
+ 1894  ls
+ 1895  vim Kbuild.in 
+ 1896  vim Makefile.am 
+ 1897  vim Kbuild.in 
+ 1898  cp ../../../igh_ethercat/devices/fec/Kbuild.in ./
+ 1899  vim Kbuild.in 
+ 1900  cp ../ccat/Kbuild.in ./
+ 1901  vim Kbuild.in 
+ 1902  cd ../../
+ 1903  ./bootstrap 
+ 1904  cd ../../../scripts/
+ 1905  ./mipc_release.sh OHT
+ 1906  cd -
+ 1907  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/scripts/../sdk/sources/linux-imx --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-wildcards=yes --disable-eoe --enable-fec=yes --enable-rtdm --with-xenomai-dir=/usr/xenomai
+ 1908  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/sdk/sources/linux-imx --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-wildcards=yes --disable-eoe --enable-fec=yes --enable-rtdm --with-xenomai-dir=/usr/xenomai
+ 1909  ./bootstrap 
+ 1910  vim configure.ac 
+ 1911  ./bootstrap 
+ 1912  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/sdk/sources/linux-imx --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-wildcards=yes --disable-eoe --enable-fec=yes --enable-rtdm --with-xenomai-dir=/usr/xenomai
+ 1913  cd -
+ 1914  vim mipc_release.sh 
+ 1915  cd -
+ 1916  make all modules -j$(nproc)
+ 1917  cd -
+ 1918  vim mipc_release.sh 
+ 1919  cd -
+ 1920  make distclean
+ 1921  source /opt/fsl-imx-wayland/4.14-sumo/environment-setup-aarch64-poky-linux
+ 1922  unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS MACHINE
+ 1923  ./bootstrap 
+ 1924  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/sdk/sources/linux-imx --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-wildcards=yes --disable-eoe --enable-fec=yes --enable-rtdm --with-xenomai-dir=/usr/xenomai
+ 1925  make all modules -j$(nproc)
+ 1926  make distclean
+ 1927  cd devices/
+ 1928  ls
+ 1929  vim Kbuild.in 
+ 1930  vim Makefile.am 
+ 1931  vim Makefile
+ 1932  cd fec/
+ 1933  ls
+ 1934  vim Kbuild.in 
+ 1935  vim Makefile.am 
+ 1936  vim Kbuild.in 
+ 1937  make clean
+ 1938  cd ../../
+ 1939  make clean
+ 1940  ls
+ 1941  rm -r dist/
+ 1942  make distclean
+ 1943  cd ..
+ 1944  ls
+ 1945  rm -rf etherlab_v1.6/
+ 1946  cd ~/work/
+ 1947  ls
+ 1948  cd -
+ 1949  cd ~/git/adv_epc-r3720/
+ 1950  ls
+ 1951  git clone https://gitlab.com/etherlab.org/ethercat.git
+ 1952  ls
+ 1953  cd ethercat/
+ 1954  ls
+ 1955  git branch 
+ 1956  cd -
+ 1957  cd ~/git/mipc100/sdk/ecat/
+ 1958  ls
+ 1959  cp -r ~/git/adv_epc-r3720/ethercat/ etherlab_v1.6/
+ 1960  cd etherlab_v1.6/
+ 1961  git status 
+ 1962  ls
+ 1963  rm -rf .git
+ 1964  ls
+ 1965  vim configure.ac 
+ 1966  cd devices/
+ 1967  ls
+ 1968  cp -r ../../igh_ethercat/devices/fec/ ./
+ 1969  cd fec/
+ 1970  ls
+ 1971  rm Makefile.in 
+ 1972  cd ..
+ 1973  vim Kbuild.in 
+ 1974  vim Makefile.am 
+ 1975  cd fec/
+ 1976  rm Kbuild.in 
+ 1977  rm Makefile.am 
+ 1978  cp ../ccat/Kbuild.in ./
+ 1979  cp ../ccat/Makefile.am ./
+ 1980  vim Kbuild.in 
+ 1981  vim Makefile.am 
+ 1982  cd ../../
+ 1983  ./bootstrap 
+ 1984  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/sdk/sources/linux-imx --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-wildcards=yes --disable-eoe --enable-fec=yes --enable-rtdm --with-xenomai-dir=/usr/xenomai
+ 1985  make all modules -j$(nproc)
+ 1986  vim .gitignore 
+ 1987  vim ~/git/mipc100/.gitignore 
+ 1988  make distclean
+ 1989  ./bootstrap 
+ 1990  vim configure.ac 
+ 1991  ./bootstrap 
+ 1992  ./configure --host=aarch64-poky-linux --with-linux-dir=/home/will/git/mipc100/sdk/sources/linux-imx --with-module-dir=/kernel/drivers/ethercat --disable-8139too --enable-wildcards=yes --disable-eoe --enable-fec=yes --enable-rtdm --with-xenomai-dir=/usr/xenomai
+ 1993  make all modules -j$(nproc)
+ 1994  ls /usr/xenomai -l
+ 1995  ls -l /usr/
+ 1996  make distclean
+ 1997  git status 
+ 1998  ifconfig 
+ 1999  cd git/mipc100/
+ 2000  git status 
+ 2001  cd git/
+ 2002  ls
+ 2003  mkdir wfsh
+ 2004  cd wfsh/
+ 2005  ls
+ 2006  git clone https://github.com/wfshwfsh/auto_control.git
+ 2007  ls
+ 2008  cd auto_control/
+ 2009  ls
+ 2010  cd imu/
+ 2011  ls
+ 2012  cd bno055/
+ 2013  ls
+ 2014  make
+ 2015  ./test.app 
+ 2016  cd ../../
+ 2017  ls
+ 2018  cd pid_temperature/
+ 2019  ls
+ 2020  cd basic/
+ 2021  ls
+ 2022  make
+ 2023  ./test.app 
+ 2024  ./test.app 3 1.2 0.7
+ 2025  ifconfig 
+ 2026  vim test.c 
+ 2027  make
+ 2028  vim test.c 
+ 2029  make
+ 2030  vim test.c 
+ 2031  make
+ 2032  make clean 
+ 2033  make
+ 2034  vim test.c 
+ 2035  make clean 
+ 2036  make
+ 2037  ./test.app 
+ 2038  make
+ 2039  ls
+ 2040  make clean 
+ 2041  make
+ 2042  v
+ 2043  make clean 
+ 2044  ls
+ 2045  vim Makefile 
+ 2046  make
+ 2047  ./test.app 
+ 2048  ls
+ 2049  vim Makefile 
+ 2050  vim test.c 
+ 2051  make
+ 2052  ls
+ 2053  ls -la
+ 2054  rm ouput.csv 
+ 2055  ls
+ 2056  make
+ 2057  ls
+ 2058  python parse_xlsx.py 
+ 2059  pip install pandas
+ 2060  sudo apt install python-pip
+ 2061  pip install pandas
+ 2062  pip install --upgrade pip
+ 2063  sudo pip install --upgrade pip
+ 2064  pip install pandas
+ 2065  sudo apt update 
+ 2066  sudo apt install python-pip
+ 2067  pip install pandas
+ 2068  sudo pip install --upgrade pip
+ 2069  pip install --upgrade pip
+ 2070  python3 parse_xlsx.py 
+ 2071  sudo apt install python3-pip 
+ 2072  pip3 install pandas
+ 2073  pip3 install --upgrade pip
+ 2074  wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
+ 2075  sudo python get-pip.py
+ 2076  pip -V
+ 2077  pip install --upgrade pip
+ 2078  pip3 install pandas
+ 2079  pip install pandas
+ 2080  python parse_xlsx.py 
+ 2081  pip install matplotlib
+ 2082  python parse_xlsx.py 
+ 2083  pip install python-tk
+ 2084  pip install tk
+ 2085  python parse_xlsx.py 
+ 2086  sudo apt-get install python3-tk
+ 2087  python parse_xlsx.py 
+ 2088  sudo apt-get install python3-tk
+ 2089  sudo apt-get install python-tk
+ 2090  python parse_xlsx.py 
+ 2091  pip install xlrd  -i https://pypi.tuna.tsinghua.edu.cn/simple
+ 2092  python parse_xlsx.py 
+ 2093  sudo pip install xlrd
+ 2094  python parse_xlsx.py 
+ 2095  python3 parse_xlsx.py 
+ 2096  pip3 install xlrd  -i https://pypi.tuna.tsinghua.edu.cn/simple
+ 2097  sudo pip3 install xlrd  -i https://pypi.tuna.tsinghua.edu.cn/simple
+ 2098  python parse_xlsx.py 
+ 2099  pip install xlrd==1.2.0
+ 2100  python parse_xlsx.py 
+ 2101  ls
+ 2102  python parse_xlsx.py 
+ 2103  pip install pandas openpyxl
+ 2104  python parse_xlsx.py 
+ 2105  rm output.xlsx 
+ 2106  python parse_xlsx.py 
+ 2107  history > cmd_hist.txt
