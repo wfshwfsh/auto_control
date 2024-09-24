@@ -153,7 +153,7 @@ static int bno_read(uint8_t *cmd, int len, uint8_t* data, int data_len)
 	//uint8_t w_ack[2]={}, r_ack[2]={};
 	uint8_t rbuf[data_len]={};
 
-//RETRY_W:
+RETRY_W:
 	if(uart_write(cmd, len) > 0){
 		
 		//uart_read(w_ack, 2);
@@ -191,6 +191,9 @@ RETRY_R:
 		if(rbuf[0] != 0xBB){
 			printf("bno055 read failed: 0x%02x %02x \n", rbuf[0], rbuf[1]);
 			usleep(1);
+			if(rbuf[0] == 0xEE && rbuf[1] == 0x07){
+				goto RETRY_W;
+			}
 			goto RETRY_R;
 		}
 	}else{
@@ -294,7 +297,7 @@ int main()
 		//if(bno055_imu_ready() & 0x44){
 			bno055_read_imu_data();  // 读取IMU数据
 		//}
-        usleep(100000);  // 每秒读取一次
+        usleep(50000);  // 每秒读取一次
     }
 	
 	
