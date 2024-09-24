@@ -139,7 +139,9 @@ RETRY:
 			return -1;
 		}
 	}else{
+#ifdef DEBUG_UART
 		printf("uart write failed\n");
+#endif
 		goto RETRY;
 	}
 	
@@ -189,7 +191,9 @@ RETRY_R:
 	
 	if(uart_read(rbuf, data_len+2) > 0){
 		if(rbuf[0] != 0xBB){
+#ifdef DEBUG_UART
 			printf("bno055 read failed: 0x%02x %02x \n", rbuf[0], rbuf[1]);
+#endif
 			usleep(1);
 			if(rbuf[0] == 0xEE && rbuf[1] == 0x07){
 				goto RETRY_W;
