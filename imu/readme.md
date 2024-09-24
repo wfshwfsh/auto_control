@@ -1,4 +1,4 @@
-#bno055
+# IMU sensor: bno055
 
 ## Issue: BUS_OVER_RUN_ERROR
 Ref to this link
