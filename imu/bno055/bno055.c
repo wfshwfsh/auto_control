@@ -11,9 +11,19 @@
 
 #include "bno055.h"
 
+/* 
+ * Pin Setup: 
+ * RPi Uart5: Tx: GPIO-12, Rx: GPIO-13
+ * BNO055 Pin: +:(3.3V) -(GND) C(RX) D(TX)
+ * BNO055 C --- RPi GPIO-12
+ * BNO055 D --- RPi GPIO-13
+ */
+
+#define bno055_register_t int
 #define error_message printf
 //#define DEBUG_UART
-#define bno055_register_t int
+
+
 
 static int serial_fd;
 
@@ -51,8 +61,8 @@ set_interface_attribs (int fd, int speed, int parity)
 
 	if (tcsetattr (fd, TCSANOW, &tty) != 0)
 	{
-			error_message ("error %d from tcsetattr", errno);
-			return -1;
+        error_message ("error %d from tcsetattr", errno);
+        return -1;
 	}
 	return 0;
 }
@@ -60,19 +70,19 @@ set_interface_attribs (int fd, int speed, int parity)
 void
 set_blocking (int fd, int should_block)
 {
-        struct termios tty;
-        memset (&tty, 0, sizeof tty);
-        if (tcgetattr (fd, &tty) != 0)
-        {
-                error_message ("error %d from tggetattr", errno);
-                return;
-        }
+    struct termios tty;
+    memset (&tty, 0, sizeof tty);
+    if (tcgetattr (fd, &tty) != 0)
+    {
+        error_message ("error %d from tggetattr", errno);
+        return;
+    }
 
-        tty.c_cc[VMIN]  = should_block ? 1 : 0;
-        tty.c_cc[VTIME] = 5;            // 0.5 seconds read timeout
+    tty.c_cc[VMIN]  = should_block ? 1 : 0;
+    tty.c_cc[VTIME] = 5;// 0.5 seconds read timeout
 
-        if (tcsetattr (fd, TCSANOW, &tty) != 0)
-                error_message ("error %d setting term attributes", errno);
+    if (tcsetattr (fd, TCSANOW, &tty) != 0)
+        error_message ("error %d setting term attributes", errno);
 }
 
 static int uart_init(const char *pName)
@@ -83,9 +93,11 @@ static int uart_init(const char *pName)
 		error_message ("error %d opening %s: %s", errno, pName, strerror (errno));
 		return 0;
     }
-
-    set_interface_attribs (serial_fd, B115200, 0);  // set speed to 115,200 bps, 8n1 (no parity)
-    set_blocking (serial_fd, 0);                // set no blocking
+    
+    // set speed to 115,200 bps, 8n1 (no parity)
+    set_interface_attribs (serial_fd, B115200, 0);
+    // set no blocking
+    set_blocking (serial_fd, 0);
 	return serial_fd;
 }
 
@@ -211,21 +223,21 @@ RETRY_R:
 	return 0;
 }
 
-
-void bno055_set_mode(uint8_t opMode) {
-    uint8_t set_mode_cmd[5] = {0xAA, 0x00, 0x3D, 0x01, opMode};  // 设置为IMU模式
-    //uart_write(set_mode_cmd, sizeof(set_mode_cmd));
+void bno055_set_mode(uint8_t opMode)
+{
+    // 设置为IMU模式
+    uint8_t set_mode_cmd[5] = {0xAA, 0x00, 0x3D, 0x01, opMode};
+    
 	bno_write(set_mode_cmd, sizeof(set_mode_cmd));
     usleep(100);
 }
 
-void bno055_read_chipId(){
-	
+void bno055_read_chipId()
+{
 	uint8_t read_chip_id[] = {0xAA, 0x01, 0x00, 0x01};
 	uint8_t chipId=0;
 	
 	bno_read(read_chip_id, sizeof(read_chip_id), &chipId, 1);
-	
 	printf("chip id: 0x%02x\n", chipId);
 }
 
@@ -279,6 +291,7 @@ void bno055_read_imu_data() {
     int16_t mag_z = (int16_t)((mag_data[5] << 8) | mag_data[4]);
 
     // 输出IMU数据
+    printf("===========================\n");
     printf("Accel: X=%d Y=%d Z=%d\n", accel_x, accel_y, accel_z);
     printf("Gyro: X=%d Y=%d Z=%d\n", gyro_x, gyro_y, gyro_z);
     printf("Mag: X=%d Y=%d Z=%d\n", mag_x, mag_y, mag_z);
@@ -286,7 +299,8 @@ void bno055_read_imu_data() {
 
 int main()
 {
-    const char *portname = "/dev/ttyUSB0";
+//    const char *portname = "/dev/ttyUSB0";
+    const char *portname = "/dev/ttyAMA1";
 	serial_fd = uart_init(portname);
 	
 	// 设置BNO055工作模式为: OPERATION_MODE_CONFIG 
@@ -301,7 +315,7 @@ int main()
 		//if(bno055_imu_ready() & 0x44){
 			bno055_read_imu_data();  // 读取IMU数据
 		//}
-        usleep(50000);  // 每秒读取一次
+        usleep(100000);  // 每秒读取一次
     }
 	
 	

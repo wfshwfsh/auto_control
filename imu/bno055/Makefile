@@ -1,6 +1,7 @@
-TAR = test
+TAR = bno055
 
-CC = g++
+CROSS_COMPILE=aarch64-linux-gnu-
+CC = ${CROSS_COMPILE}g++
 CFLAGS = -Wall 
 LDFLAGS = -lrt 
 
@@ -13,3 +14,6 @@ clean:
 	rm -f $(TAR).app
 exec: 
 	./$(TAR).app
+
+install:
+	cp $(TAR).app /nfsshare
